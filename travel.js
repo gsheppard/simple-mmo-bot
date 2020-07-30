@@ -7,8 +7,8 @@ var travelInterval = setInterval(() => {
   var stepsCount = parseInt(document.getElementById('current_steps')?.innerText, 10);
 
   if (stepsCount === 0) {
-    console.log('Steps: 0; Clearing;');
-    clearInterval(travelInterval);
+    clearAndAlert(travelInterval, 'Steps: 0; Clearing;');
+    return;
   }
 
   if (hasMonster) {

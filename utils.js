@@ -30,3 +30,39 @@ var getModalButton = (btnText, idx = 0) => {
 		return btn;
 	}
 }
+
+var nextTask = () => {
+	/*
+		Setup: make play/pause button
+	*/
+
+	/*
+		Battle
+		- check health
+		- check energy
+		- fight!
+	*/
+	/*
+		Quest
+		- Find bottom-most uncompleted quest
+		- Do it X times
+	*/
+	/*
+		Daily Reward
+		https://web.simple-mmo.com/dailyreward
+		- check button state
+		- click
+		- deal with modal?
+	*/
+	/*
+		Travel
+		- Check steps
+		- travel
+	*/
+	/*
+		Job
+		https://web.simple-mmo.com/jobs/view/1
+		- set slider to 5
+		- confirm
+	*/
+}
