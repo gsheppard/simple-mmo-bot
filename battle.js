@@ -8,21 +8,25 @@ var getResourcePercentage = (resource) => {
 
 var battleArenaInterval = setInterval(() => {
   var generateEnemyBtn = document.getElementsByClassName('kt-callout--diagonal-bg')[0].getElementsByTagName('button')[0];
-  var confirmBtn = document.getElementsByClassName('swal2-actions')[0]?.getElementsByTagName('button')[0];
+  var confirmBtn = getModalButton('Yes, generate a enemy');
+  var attackBtn = getModalButton('Attack');
 
   var hasEnergy = getResourcePercentage('energy') >= 1;
   var hasEnoughHealth = getResourcePercentage('health') >= 50;
 
   if (hasEnergy && hasEnoughHealth) {
-    if (confirmBtn) {
-      simulateClick(confirmBtn);
+    if (isModalOpen()) {
+      if (confirmBtn) {
+        simulateClick(confirmBtn);
+      } else if (attackBtn) {
+        simulateClick(attackBtn);
+      }
     } else {
       simulateClick(generateEnemyBtn);
     }
   } else {
-    clearInterval(battleArenaInterval);
-    console.log('Cancelling Battle');
+    clearAndAlert(battleArenaInterval, 'BattleArena Cancelled');
   }
 }, 2000)
 
-console.log("battle arena loaded");
+console.log("BattleArena loaded");

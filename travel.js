@@ -1,3 +1,5 @@
+// https://web.simple-mmo.com/travel
+
 var travelInterval = setInterval(() => {
   var btn = document.getElementsByClassName('stepbuttonnew')[0];
   var monsterBtn = document?.getElementsByClassName('div-travel-text')[0]?.getElementsByClassName('cta')[0];
@@ -11,7 +13,7 @@ var travelInterval = setInterval(() => {
 
   if (hasMonster) {
     monsterBtn.click();
-  } else if (!btn.disabled) {
+  } else if (btn.disabled) {
     simulateClick(btn);
   }
 }, 1500);
