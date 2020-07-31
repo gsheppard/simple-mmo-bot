@@ -17,7 +17,13 @@ var clearAndAlert = (interval, msg) => {
 }
 
 var isModalOpen = () => {
-	return document.getElementsByClassName('swal2-container').length >= 1;
+	var modal = document.getElementsByClassName('swal2-container');
+	var btn = getModalButton('Yes, I want to assign my points!');
+
+	if (btn) {
+		// todo: put dismissal of the levelup modal here to fix attack bug
+	}
+	return modal.length >= 1;
 }
 
 var getModalButton = (btnText, idx = 0) => {

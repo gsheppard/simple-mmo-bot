@@ -10,6 +10,7 @@ var attackInterval = setInterval(() => {
     if (doneBtn) {
       simulateClick(doneBtn);
     } else {
+      // todo: levelup bug
       clearAndAlert(attackInterval, 'Attack Cancelled; Modal Open');
     }
   } else if (successAlert.style.display !== 'none') {
